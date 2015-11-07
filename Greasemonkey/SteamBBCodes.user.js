@@ -7,7 +7,7 @@ https://github.com/ZeroUnderscoreOu/SteamBBCodes
 */
 
 // ==UserScript==
-// @name        SteamActivityFilter
+// @name        Steam BBCodes
 // @author      ZeroUnderscoreOu
 // @version     1.0.0
 // @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/SteamOrange.png
