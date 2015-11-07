@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Steam BBCodes",
+	"short_name": "SBBC",
+	"author": "ZeroUnderscoreOu",
+	"version": "1.0.0",
+	"homepage_url": "http://steamcommunity.com/groups/0_oWassup/discussions/4/",
+	"icons": {
+		"16": "Icon.png",
+		"48": "Icon.png",
+		"128": "Icon.png"
+	},
+	"description": "Steam BBCodes editor",
+	"content_scripts": [
+		{
+			"matches": [
+				"*://steamcommunity.com/*"
+			],
+			"js": [
+				"Index.js"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		"SteamBBCodes.js"
+	]
+}

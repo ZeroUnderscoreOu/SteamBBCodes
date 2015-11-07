@@ -1,0 +1,16 @@
+{
+	"name": "steambbcodes",
+	"title": "Steam BBCodes",
+	"author": "ZeroUnderscoreOu",
+	"version": "1.0.0",
+	"homepage": "http://steamcommunity.com/groups/0_oWassup/discussions/4/",
+	"description": "Steam BBCodes editor",
+	"license": "MPL-2.0 with exceptions (https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamActivityFilter/master/License.txt)",
+	"main": "index.js",
+	"engines": {
+		"Firefox": "39.0a1 - 45.0"
+	},
+	"permissions": {
+		"multiprocess": "true"
+	}
+}

@@ -1,0 +1,2 @@
+Steam BBCodes userscript license
+This script is licensed under MPL-2.0, with few exceptions: if you use it privately, you're free to keep it private; if you publish anything based on it - mention me and let me know; if you earn money on anything based on it - contact me & share; if you have questions about the license - contact me. In other cases use MPL-2.0 (https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamActivityFilter/master/Mozilla%20Public%20License%202.0.txt).
