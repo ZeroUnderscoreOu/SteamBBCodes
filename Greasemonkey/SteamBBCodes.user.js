@@ -1,29 +1,15 @@
-/*
-Steam BBCodes userscript 1.0.0
-Written by ZeroUnderscoreOu
-http://steamcommunity.com/id/ZeroUnderscoreOu/
-http://steamcommunity.com/groups/0_oWassup/discussions/4/
-https://github.com/ZeroUnderscoreOu/SteamBBCodes
-*/
-
 // ==UserScript==
 // @name        Steam BBCodes
 // @author      ZeroUnderscoreOu
-// @version     1.0.0
-// @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/SteamOrange.png
+// @version     1.1.0-beta
+// @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Logo128.png
 // @description Steam BBCodes editor
-// @downloadURL https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamActivityFilter/master/Greasemonkey/SteamBBCodes.user.js
-// @updateURL   https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamActivityFilter/master/Greasemonkey/SteamBBCodes.user.js
+// @downloadURL https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Greasemonkey/SteamBBCodes.user.js
+// @updateURL   https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Greasemonkey/SteamBBCodes.user.js
 // @namespace   https://github.com/ZeroUnderscoreOu/
-// @include     *://steamcommunity.com/*
+// @include     /^https?:\/\/steamcommunity.com\/(id|profiles|sharedfiles|groups|discussions)\/(?!editguidesubsection\/).*/
+// @match       *://store.steampowered.com/app/*
 // @run-at      document-end
-// @grant       GM_getResourceText
-// @resource    SteamBBCodes https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/SteamBBCodes.js
+// @grant       none
+// @require     https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/SteamBBCodes.js
 // ==/UserScript==
-
-(function(){
-	var TempElem = document.createElement("Script");
-	TempElem.type = "Text/JavaScript";
-	TempElem.textContent = GM_getResourceText("SteamBBCodes");
-	document.head.appendChild(TempElem);
-})();
