@@ -1,5 +1,5 @@
 /*
-Steam BBCodes userscript 1.1.0-beta
+Steam BBCodes userscript 1.1.1-beta
 Written by ZeroUnderscoreOu
 http://steamcommunity.com/id/ZeroUnderscoreOu/
 http://steamcommunity.com/groups/0_oWassup/discussions/4/
@@ -11,13 +11,13 @@ https://github.com/ZeroUnderscoreOu/SteamBBCodes
 //document.getElementsByClassName("input_box")[0]; // review
 
 /*
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_bold.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_italic.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_underline.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_strike.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_link.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_header1.png
-http://steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_bullet.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_bold.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_italic.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_underline.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_strike.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_link.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_header1.png
+//steamcommunity-a.akamaihd.net/public/images/sharedfiles/guides/format_bullet.png
 */
 
 /* ToDO
@@ -29,56 +29,56 @@ var TextArea;
 //var TagList = ["B","I","U","Strike","Spoiler","Code","NoParse","URL","H1","Quote","List","OList"];
 var TagList = { // available tags
 	B: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:csgob:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:csgob:",
 		Extended: false
 	},
 	I: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:Li:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:Li:",
 		Extended: false
 	},
 	U: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:U_Pneuma:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:U_Pneuma:",
 		Extended: false
 	},
 	Strike: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:sforslash:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:sforslash:",
 		Extended: false
 	},
 	Spoiler: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:sow_info:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:sow_info:",
 		Extended: false
 	},
 	Code: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:hack_the_planet:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:hack_the_planet:",
 		Extended: true
 	},
 	NoParse: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:cancel:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:cancel:",
 		Extended: false
 	},
 	//-: "", // separator
 	URL: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:LIS_Arrow:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:LIS_Arrow:",
 		Extended: false
 	},
 	H1: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:greenexclamation:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:greenexclamation:",
 		Extended: true
 	},
 	Quote: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:missingsay:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:missingsay:",
 		Extended: true
 	},
 	List: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:tablet:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:tablet:",
 		Extended: true
 	},
 	OList: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:NOTES:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:NOTES:",
 		Extended: true
 	},
 	Table: {
-		URL: "https://steamcommunity-a.akamaihd.net/economy/emoticon/:cabinet:",
+		URL: "//steamcommunity-a.akamaihd.net/economy/emoticon/:cabinet:",
 		Extended: true
 	}
 };
@@ -123,17 +123,17 @@ function BBCodesInitialize() {
 		if (typeof($)=="undefined") { // checking for Prototype
 			console.log("Prototype")
 			TempElem = document.head.appendChild(document.createElement("Script"));
-			TempElem.src = "http://steamcommunity-a.akamaihd.net/public/javascript/prototype-1.7.js?v=.55t44gwuwgvw";
+			TempElem.src = "//steamcommunity-a.akamaihd.net/public/javascript/prototype-1.7.js?v=.55t44gwuwgvw";
 			TempElem.type = "Text/JavaScript";
 		} else {
 			false;
 		};
 		TempElem = document.head.appendChild(document.createElement("Script")); // new Element("Script")
-		TempElem.src = "http://steamcommunity-a.akamaihd.net/public/javascript/livepipe.js?v=.sk9HEaDHE9C5"; // scripts from guide editor
+		TempElem.src = "//steamcommunity-a.akamaihd.net/public/javascript/livepipe.js?v=.sk9HEaDHE9C5"; // scripts from guide editor
 		TempElem.type = "Text/JavaScript";
 		TempElem.onload = function() {
 			TempElem = document.head.appendChild(document.createElement("Script")); // new Element("Script")
-			TempElem.src = "http://steamcommunity-a.akamaihd.net/public/javascript/textarea.js?v=.KmmHJqTpwrPO";
+			TempElem.src = "//steamcommunity-a.akamaihd.net/public/javascript/textarea.js?v=.KmmHJqTpwrPO";
 			TempElem.type = "Text/JavaScript";
 			TempElem.onload = function() {InsertionInitialize();}; // initializing only after scripts are loaded
 		};

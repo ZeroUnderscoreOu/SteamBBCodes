@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Steam BBCodes
 // @author      ZeroUnderscoreOu
-// @version     1.1.0-beta
+// @version     1.1.1-beta
 // @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Logo128.png
 // @description Steam BBCodes editor
 // @downloadURL https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Greasemonkey/SteamBBCodes.user.js
