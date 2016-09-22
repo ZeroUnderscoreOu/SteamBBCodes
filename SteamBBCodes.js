@@ -1,5 +1,5 @@
 /*
-Steam BBCodes userscript 1.2.0
+Steam BBCodes userscript 1.3.0
 Written by ZeroUnderscoreOu
 http://steamcommunity.com/id/ZeroUnderscoreOu/
 http://steamcommunity.com/groups/0_oWassup/discussions/4/
@@ -12,7 +12,6 @@ https://github.com/ZeroUnderscoreOu/SteamBBCodes
 
 /* ToDO
 (возможно) переписать создание кнопок полностью динамически, без клонирования; создавать ButtonContainer динамически; придумать, как передавать стили для него
-! не забыть заменить ZeroDay
 (возможно) переписать массивы из одного элемента и сложные селекторы в InsertionInitialization()
 */
 
@@ -133,7 +132,7 @@ var TextArea = document.body.getElementsByTagName("TextArea");
 		ButtonStyle.textContent =
 			".BBCodeContainer {Position: Relative; Float: Left;}"
 			+ "Button.BBCodeButton {Margin-Right: 4px;}"
-			+ "Button.BBCodeButton .ico16 {Width: 16px; Height: 16px; Vertical-Align: Middle; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/ZeroDay/master/BackgroundIcons.png);}";
+			+ "Button.BBCodeButton .ico16 {Width: 16px; Height: 16px; Vertical-Align: Middle; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/BackgroundIcons.png);}";
 		document.head.appendChild(ButtonStyle);
 		TextAreaInitialization(TextArea);
 		InsertionInitialization();
