@@ -1,20 +1,18 @@
 /*
-Steam BBCodes userscript 1.3.0
+Steam BBCodes userscript 1.3.1
 Written by ZeroUnderscoreOu
+Licensed under MPL 2.0
 http://steamcommunity.com/id/ZeroUnderscoreOu/
 http://steamcommunity.com/groups/0_oWassup/discussions/4/
 https://github.com/ZeroUnderscoreOu/SteamBBCodes
 */
-
-//document.getElementsByClassName("forumtopic_reply_textarea")[0]; // forum
-//document.getElementsByClassName("commentthread_textarea")[0]; // comment
-//document.getElementsByClassName("input_box")[0]; // review
 
 /* ToDO
 (возможно) переписать создание кнопок полностью динамически, без клонирования; создавать ButtonContainer динамически; придумать, как передавать стили для него
 (возможно) переписать массивы из одного элемента и сложные селекторы в InsertionInitialization()
 */
 
+(function(){
 "use strict";
 var CurTextArea; // selected textarea
 var ButtonContainer = document.createElement("Div"); // buttons' container;
@@ -119,7 +117,7 @@ var Responder = { // reinserting buttons - new post/edited post/new page on foru
 ButtonContainer.className = "BBCodeContainer";
 ButtonBase.type = "Button";
 ButtonBase.className = "btn_grey_black BBCodeButton";
-ButtonBase = ButtonBase.appendChild(document.createElement("Img"));
+ButtonBase = ButtonBase.appendChild(document.createElement("Span"));
 ButtonBase.className = "ico16";
 ButtonBase = ButtonBase.parentElement;
 BBCodesInitialization();
@@ -132,7 +130,7 @@ var TextArea = document.body.getElementsByTagName("TextArea");
 		ButtonStyle.textContent =
 			".BBCodeContainer {Position: Relative; Float: Left;}"
 			+ "Button.BBCodeButton {Margin-Right: 4px;}"
-			+ "Button.BBCodeButton .ico16 {Width: 16px; Height: 16px; Vertical-Align: Middle; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/BackgroundIcons.png);}";
+			+ "Button.BBCodeButton .ico16 {Vertical-Align: Middle; Display: Inline-Block; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/BackgroundIcons.png);}";
 		document.head.appendChild(ButtonStyle);
 		TextAreaInitialization(TextArea);
 		InsertionInitialization();
@@ -255,7 +253,7 @@ function ButtonInsertion(InsertionPoint,ButtonOffset,ButtonHeight,BBExtended,Ins
 			if (BBExtended||!TagList[Match].Extended) { // if all tags are supported or tag isn't an extended one; depends on comment destination; also serves to prevent controls' overlaping
 				let ClonedBase = ButtonBase.cloneNode(true);
 				ClonedBase.title = TagList[Match].Title;
-				ClonedBase.querySelector("Img").style["background-position"] = TagList[Match].Offset;
+				ClonedBase.querySelector("Span").style["background-position"] = TagList[Match].Offset;
 				ClonedContainer.appendChild(ClonedBase).addEventListener(
 					"click",
 					BBCode.bind(this,Match),
@@ -368,3 +366,4 @@ function WrapSelectionMultiline(Before,After,LineBefore,LineAfter) {
 };
 
 //Ajax.Responders.unregister(Responder);
+})();

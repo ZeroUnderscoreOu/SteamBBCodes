@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Steam BBCodes
 // @author      ZeroUnderscoreOu
-// @version     1.3.0
+// @version     1.3.1
 // @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Logo128.png
 // @description Steam BBCodes editor
 // @namespace   https://github.com/ZeroUnderscoreOu/
@@ -18,8 +18,3 @@
 // @require     https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Beholder.js
 // @resource    SteamBBCodes https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/SteamBBCodes.js
 // ==/UserScript==
-
-var Userscript = document.createElement("Script");
-Userscript.type = "Text/JavaScript";
-Userscript.textContent = GM_getResourceText("SteamBBCodes");
-document.head.appendChild(Userscript);
