@@ -1,5 +1,5 @@
 /*
-Steam BBCodes userscript 1.3.2
+Steam BBCodes userscript 1.3.3
 Written by ZeroUnderscoreOu
 Licensed under MPL 2.0
 http://steamcommunity.com/id/ZeroUnderscoreOu/
@@ -117,9 +117,10 @@ var Responder = { // reinserting buttons - new post/edited post/new page on foru
 ButtonContainer.className = "BBCodeContainer";
 ButtonBase.type = "Button";
 ButtonBase.className = "btn_grey_black BBCodeButton";
-ButtonBase = ButtonBase.appendChild(document.createElement("Span"));
+ButtonBase = ButtonBase.appendChild(document.createElement("Span")); // Span at this point has CSS rules for it; also following the general Steam button structure
+ButtonBase = ButtonBase.appendChild(document.createElement("Span")); // Chrome doesn't support Img without Src, so have to use other element
 ButtonBase.className = "ico16";
-ButtonBase = ButtonBase.parentElement;
+ButtonBase = ButtonBase.parentElement.parentElement;
 BBCodesInitialization();
 
 function BBCodesInitialization() {
@@ -128,9 +129,9 @@ var TextArea = document.body.getElementsByTagName("TextArea");
 		let ButtonStyle = document.createElement("Style");
 		ButtonStyle.type = "Text/CSS";
 		ButtonStyle.textContent =
-			".BBCodeContainer {Position: Relative; Float: Left;}"
+			"Div.BBCodeContainer {Position: Relative; Float: Left;}"
 			+ "Button.BBCodeButton {Margin-Right: 4px;}"
-			+ "Button.BBCodeButton .ico16 {Vertical-Align: Middle; Display: Inline-Block; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/BackgroundIcons.png);}";
+			+ "Button.BBCodeButton .ico16 {Vertical-Align: Middle; Background-Image: URL(https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/BackgroundIcons.png);}";
 		document.head.appendChild(ButtonStyle);
 		TextAreaInitialization(TextArea);
 		InsertionInitialization();
@@ -253,7 +254,7 @@ function ButtonInsertion(InsertionPoint,ButtonOffset,ButtonHeight,BBExtended,Ins
 			if (BBExtended||!TagList[Match].Extended) { // if all tags are supported or tag isn't an extended one; depends on comment destination; also serves to prevent controls' overlaping
 				let ClonedBase = ButtonBase.cloneNode(true);
 				ClonedBase.title = TagList[Match].Title;
-				ClonedBase.querySelector("Span").style["background-position"] = TagList[Match].Offset;
+				ClonedBase.querySelector("Span > Span").style["background-position"] = TagList[Match].Offset;
 				ClonedContainer.appendChild(ClonedBase).addEventListener(
 					"click",
 					BBCode.bind(this,Match),
