@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        Steam BBCodes
 // @author      ZeroUnderscoreOu
-// @version     1.3.1
+// @version     1.3.2
 // @icon        https://raw.githubusercontent.com/ZeroUnderscoreOu/SteamBBCodes/master/Logo128.png
 // @description Steam BBCodes editor
 // @namespace   https://github.com/ZeroUnderscoreOu/
-// @include     /^https?:\/\/steamcommunity.com\/(app|discussions\/forum|news\/post)\/.*/
+// @include     /^https?:\/\/steamcommunity.com\/(app\/\d+\/discussions|discussions\/forum|news\/post)\/.*/
 // @include     /^https?:\/\/steamcommunity.com\/sharedfiles\/(filedetails|edititem|itemedittext)\/.*/
-// @include     /^https?:\/\/steamcommunity.com\/(id|profiles)\/[^\/]+\/($|allcomments|edit|friendactivitydetail|home|recommended|status).*/
+// @include     /^https?:\/\/steamcommunity.com\/(id|profiles)\/[^\/]+\/($|allcomments|edit|friendactivitydetail|home(?!\/invites)|recommended|status).*/
 // @include     /^https?:\/\/steamcommunity.com\/groups\/([^#\/]+)(#?$|#comments|#events|\/edit|\/discussions|\/reporteddiscussions).*/
 // @include     /^https?:\/\/steamcommunity.com\/groups\/([^#\/]+)(#|\/)announcements\/(create|detail|edit).*/
 // @match       *://steamcommunity.com/games/*/announcements/detail/*

@@ -1,5 +1,5 @@
 /*
-Steam BBCodes userscript 1.3.1
+Steam BBCodes userscript 1.3.2
 Written by ZeroUnderscoreOu
 Licensed under MPL 2.0
 http://steamcommunity.com/id/ZeroUnderscoreOu/
