@@ -1,5 +1,5 @@
 /*
-Steam BBCodes userscript 1.3.3
+Steam BBCodes userscript 1.3.4
 Written by ZeroUnderscoreOu
 Licensed under MPL 2.0
 http://steamcommunity.com/id/ZeroUnderscoreOu/
@@ -136,7 +136,7 @@ var TextArea = document.body.getElementsByTagName("TextArea");
 		TextAreaInitialization(TextArea);
 		InsertionInitialization();
 	} else {
-		alert("Steam BBCodes found no textareas on\r\n"+document.location.href); // should remove this check later
+		console.error("Steam BBCodes found no textareas on\r\n"+document.location.href); // should remove this check later
 	};
 };
 
@@ -235,10 +235,10 @@ function InsertionInitialization() { // I don't make additional check for if any
 			if (InsertionPoint.length) {
 				console.log("Point",12,InsertionPoint.length);
 				ButtonInsertion(InsertionPoint,"44px","22px",BBLimited);
-				alert("Steam BBCodes inserted at default point\r\n"+document.location.href);
+				console.error("Steam BBCodes inserted at default point\r\n"+document.location.href);
 			} else {
 				console.log("Point",0,InsertionPoint.length);
-				alert("Steam BBCodes has no place to insert to\r\n"+document.location.href);
+				console.error("Steam BBCodes has no place to insert to\r\n"+document.location.href);
 			};
 			break;
 	};

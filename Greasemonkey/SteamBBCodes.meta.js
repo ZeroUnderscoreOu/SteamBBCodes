@@ -1,5 +1,5 @@
 // ==UserScript==
-// @version     1.3.3
+// @version     1.3.4
 // @downloadURL https://github.com/ZeroUnderscoreOu/SteamBBCodes/raw/master/Userscript/SteamBBCodes.user.js
 // @updateURL   https://github.com/ZeroUnderscoreOu/SteamBBCodes/raw/master/Userscript/SteamBBCodes.user.js
 // ==/UserScript==
